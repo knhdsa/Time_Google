@@ -122,12 +122,11 @@ def help1():
     Label(root, text='1. ctrl+shift+f1 คือพูดเวลา', font=('Arial', 25), width=35).pack()
     Label(root, text='2. ctrl+shift+f2 คือพูดเวลาทุกนาทีที่เราตั้งในไฟล์ config.ini', font=('Arial', 25), width=40).pack()
     Label(root, text='3. ctrl+shift+f3 คือหยุดคำสั่งข้อ2', font=('Arial', 25), width=35).pack()
-    Label(root, text='4. ctrl+shift+f4 คือการซ้อนโปรแกรมทีเปิดค้างไว้', font=('Arial', 25), width=35).pack()
-    Label(root, text='4. ctrl+alt+f4 คือการยกเลิกซ้อนโปรแกรมทีเปิดค้างไว้', font=('Arial', 25), width=35).pack()
-    Label(root, text='5. ctrl+alt+shift+esc คือลบไฟล์ขยะ', font=('Arial', 25), width=35).pack()
-    Label(root, text='6. ctrl+alt+h คือหน้านี้ที่เราดูสำสั่ง', font=('Arial', 25), width=35).pack()
-    Label(root, text='7. ctrl+alt+f5 ปิดโปรแกรม', font=('Arial', 25), width=35).pack()
+    Label(root, text='4. ctrl+alt+shift+esc คือลบไฟล์ขยะ', font=('Arial', 25), width=35).pack()
+    Label(root, text='5. ctrl+alt+h คือหน้านี้ที่เราดูสำสั่ง', font=('Arial', 25), width=35).pack()
+    Label(root, text='6. ctrl+alt+f5 ปิดโปรแกรม', font=('Arial', 25), width=35).pack()
     Label(root, text='7. ctrl+alt+f6 เปิดระบบ save แบตเมื่อ 20% จะปิดคอมทันที', font=('Arial', 25), width=35).pack()
+    Label(root, text='8. ctrl+alt+shift+s คือตั้งเวลาปิดคอมถ้าไม่ได้ใส่เลขก็จะไม่ตั้ง' ,font=('Arial', 25), width=40).pack()
 
     root.mainloop()
 
@@ -180,10 +179,6 @@ def k1():
         if keyboard.is_pressed('ctrl+alt+shift+esc'):
             os.system('rd %temp% /s /q')
             os.system('md %temp%')
-        if keyboard.is_pressed('ctrl+shift+f4'):
-            run_in_background()
-        if keyboard.is_pressed('ctrl+alt+f4'):
-            run_no_background()
         if keyboard.is_pressed('ctrl+shift+f3'):
             break
         if keyboard.is_pressed('ctrl+shift+f1'):
@@ -204,7 +199,6 @@ def k1():
             os.system("start Save20.exe")
             time.sleep(3)
 
-
         time.sleep(0.01)
 
 while True:
@@ -213,10 +207,6 @@ while True:
     if keyboard.is_pressed('ctrl+alt+shift+esc'):
         os.system('rd %temp% /s /q')
         os.system('md %temp%')
-    if keyboard.is_pressed('ctrl+shift+f4'):
-        run_in_background()
-    if keyboard.is_pressed('ctrl+alt+f4'):
-        run_no_background()
     if keyboard.is_pressed('ctrl+shift+f2'):
         k1()
     if keyboard.is_pressed('ctrl+shift+f1'):
