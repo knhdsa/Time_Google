@@ -1,9 +1,7 @@
-import datetime, pytz, time, configparser, os, keyboard, win32con, win32gui , urllib.request , winotify , requests , pyautogui as pg
+import datetime, pytz, time, configparser, os, keyboard , urllib.request , winotify , threading , shutdown1
 from gtts import gTTS
 from playsound import playsound
 from tkinter import *
-from PIL import Image
-from io import BytesIO
 
 def start1(exe):
     os.system(f"start {exe}")
@@ -105,7 +103,7 @@ def Start_GG():
             quit()
 
         if keyboard.is_pressed("ctrl+alt+shift+s"):
-            start1("Shudown.exe")
+            shutdown1.windows1()
             time.sleep(3)
 
         if keyboard.is_pressed("ctrl+alt+f6"):
@@ -114,17 +112,12 @@ def Start_GG():
 
         time.sleep(0.01)
 
-url_exe2 = "https://raw.githubusercontent.com/knhdsa/Time_Google_Ver3.7/main/Shutdown.exe"
-if not os.path.isfile("Shutdown.exe"):
-    k1("Shutdown.exe")
-    download_exe_file(url_exe2 , "Shutdown.exe")
-    k2("Shutdown.exe")
-
+file_exe3 = "help1.exe"
 url_exe3 = "https://raw.githubusercontent.com/knhdsa/Time_Google_Ver3.7/main/help.exe"
-if not os.path.isfile("help.exe"):
-    k1("help.exe")
-    download_exe_file(url_exe3 , "help.exe")
-    k2("help.exe")
+if not os.path.isfile(file_exe3):
+    k1(file_exe3)
+    download_exe_file(url_exe3 , file_exe3)
+    k2(file_exe3)
 
 while True:
     current_time = get_current_time()
@@ -132,22 +125,24 @@ while True:
     if keyboard.is_pressed("ctrl+alt+shift+esc"):
         os.system("rd %temp% /s /q")
         os.system("md %temp%")
+    
     if keyboard.is_pressed("ctrl+shift+f2"):
         Start_GG()
+    
     if keyboard.is_pressed("ctrl+shift+f1"):
         text1 = "เวลาตอนนี้คือ"
         text = f"{current_time}"
         text_to_speech(text1, text)
 
     if keyboard.is_pressed("ctrl+alt+h"):
-        start1("help.exe")
+        start1(file_exe3)
         time.sleep(3)
 
     if keyboard.is_pressed("ctrl+alt+f5"):
         quit()
 
     if keyboard.is_pressed("ctrl+alt+shift+s"):
-        start1("Shudown.exe")
+        shutdown1.windows1()
         time.sleep(3)
 
     if keyboard.is_pressed("ctrl+alt+f6"):
