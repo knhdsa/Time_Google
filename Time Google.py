@@ -1,5 +1,5 @@
 from tkinter import *
-import psutil , winotify
+import psutil , winotify , os
 
 def is_program_running(program_name):
     for process in psutil.process_iter(['pid', 'name']):
@@ -8,11 +8,15 @@ def is_program_running(program_name):
     return False
 
 # ตัวอย่างการใช้งาน
-program_name = 'Time Google.exe'  # เปลี่ยนเป็นชื่อโปรแกรมที่คุณต้องการตรวจสอบ
+program_name = 'codeall.exe'  # เปลี่ยนเป็นชื่อโปรแกรมที่คุณต้องการตรวจสอบ
 if is_program_running(program_name):
     g1 = winotify.Notification(app_id="Time Google",
                                 title=f"คุณได้เปิดโปรแกรม {program_name} นี้ไปแล้ว",
                                 msg=f"คุณได้เปิดโปรแกรม {program_name} นี้ไปแล้ว")
     g1.show()
+
+    quit()
+
 else:
-    import codeall
+    os.system("start codeall")
+    quit()

@@ -16,26 +16,25 @@ def k1(gx1):
     if not os.path.isfile(gx1):
         g1 = winotify.Notification(app_id="Time Google",
                                    title="กำลังโหลดโปรแกรมเพิ่ม",
-                                   msg=f"โหลดโปรแกรม {gx1} อยู่")
+                                   msg=f"โหลดโปรแกรม {gx1} อยู่",
+                                   icon="icon.ico")
         g1.show()
 
 def k2(gx1):
     if os.path.isfile(gx1):
         g2 = winotify.Notification(app_id="Time Google",
                                    title="โหลดเสร็จแลัว",
-                                   msg=f"โหลดโปรแกรม {gx1} เสร็จแลัว")
+                                   msg=f"โหลดโปรแกรม {gx1} เสร็จแลัว",
+                                   icon="icon.ico")
         g2.show()
 
 def download_exe_file(url, save_path):
     try:
         urllib.request.urlretrieve(url, save_path)
     except Exception as e:
-        root = Tk()
-        root.title("Error 012")
-
-        Label(root,text="Error 012",font=25).pack()
-
-        root.mainloop()
+        g1 = winotify.Notification(app_id="Time Google",
+                                   title="Error การโหลด",
+                                   icon="icon.ico")
 
 file_exe1 = "Save20.exe"
 if not os.path.isfile(file_exe1):
