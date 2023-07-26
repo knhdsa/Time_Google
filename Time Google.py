@@ -99,12 +99,14 @@ def Start_GG():
 
         if keyboard.is_pressed("ctrl+alt+h"):
             start1("help.exe")
+            time.sleep(3)
         
         if keyboard.is_pressed("ctrl+alt+f5"):
             quit()
 
         if keyboard.is_pressed("ctrl+alt+shift+s"):
             start1("Shudown.exe")
+            time.sleep(3)
 
         if keyboard.is_pressed("ctrl+alt+f6"):
             os.system("start Save20.exe")
@@ -139,12 +141,14 @@ while True:
 
     if keyboard.is_pressed("ctrl+alt+h"):
         start1("help.exe")
+        time.sleep(3)
 
     if keyboard.is_pressed("ctrl+alt+f5"):
         quit()
 
     if keyboard.is_pressed("ctrl+alt+shift+s"):
         start1("Shudown.exe")
+        time.sleep(3)
 
     if keyboard.is_pressed("ctrl+alt+f6"):
         os.system("start Save20.exe")
