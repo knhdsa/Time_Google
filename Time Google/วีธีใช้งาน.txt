@@ -1,5 +1,0 @@
-1. เปิดโปรแกรม ในเหมือนไม่มีอะไรเกิดขึ้นให้
-2. เปิดแลัวกด ctrl + alt + h จะบอกทั้งมันกับคีย์แลัวอ่านได้เลย
-
-1. Open the program as if nothing happened.
-2. Open it and press ctrl + alt + h will tell both it and key and read it.
