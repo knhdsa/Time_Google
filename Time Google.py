@@ -139,7 +139,7 @@ while True:
         quit()
 
     if keyboard.is_pressed("ctrl+alt+shift+s"):
-        shutdown1.windows1()
+        Shutdown.windows1()
 
 
     if keyboard.is_pressed("ctrl+alt+f6"):
