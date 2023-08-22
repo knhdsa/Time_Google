@@ -1,32 +1,34 @@
-import os,win32con, win32gui
+import os , winotify
 from tkinter import *
 
-def settime_shutown():
+def windows1():
+    def k1(gx1,gx2):
+        g1 = winotify.Notification(app_id="Time Google",
+                                    title=f"{gx1}",
+                                    msg=f"{gx2}")
+        g1.show()
+
+    def shutdown():
+        hours = int(entry_hours.get())
+        minutes = int(entry_minutes.get())
+        seconds = int(entry_seconds.get())
+
+        total_seconds = (hours * 3600) + (minutes * 60) + seconds
+
+        os.system(f'shutdown /s /t {total_seconds}')
+
+        k1("จะได้ทำการปิดคอมในเวลา",f"{hours} Hours {minutes} นาที {seconds} วินาทีจะปิดคอมในเวลานี้")
 
     def cancel_shutdown():
+        k1("ได้ทำการหยุดการปิดคอม","โปรแกรมได้ทำการหยุดการปิดคอม")
         os.system('shutdown /a')
-    
-    def shutdown():
-        hours = entry_hours.get()
-        minutes = entry_minutes.get()
-        seconds = entry_seconds.get()
-
-        # ตรวจสอบว่าข้อมูลที่รับเข้ามาเป็นตัวเลขหรือไม่
-        if hours.isdigit() and minutes.isdigit() and seconds.isdigit():
-            hours = int(hours)
-            minutes = int(minutes)
-            seconds = int(seconds)
-
-            total_seconds = (hours * 3600) + (minutes * 60) + seconds
-
-            if total_seconds > 0:
-                os.system(f'shutdown /s /t {total_seconds}')
 
     root = Tk()
     root.title('Auto Shutdown')
     root.configure(bg='green')
 
-    # ตั้งค่าไอคอนให้กับหน้าต่าง
+    # Set window icon
+    # Note: Make sure 'icon.ico' exists in the current working directory or provide the correct path
     root.iconbitmap('icon.ico')
 
     label_hours = Label(root, text="Hours:", font=("Arial", 15), bg='green')
@@ -54,7 +56,3 @@ def settime_shutown():
     btn_cancel_shutdown.pack()
 
     root.mainloop()
-
-    win32gui.ShowWindow(win32gui.GetForegroundWindow(), win32con.SW_MAXIMIZE)
-
-settime_shutown()
