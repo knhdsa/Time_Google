@@ -1,4 +1,4 @@
-import datetime, pytz, time, configparser, os, keyboard , urllib.request , winotify , threading , Shutdown , checker , help
+import datetime, pytz, time, configparser, os, keyboard , urllib.request , winotify , threading , Shutdown , checker , help , sound , voice_pro_up
 from gtts import gTTS
 from playsound import playsound
 from tkinter import *
@@ -90,6 +90,13 @@ def Start_GG():
             text1 = "เวลาตอนนี้คือ"
             text = f"{current_time}"
             text_to_speech(text1, text)
+
+        if keyboard.is_pressed("ctrl+alt+f7"):
+            sound.k1()
+
+        if keyboard.is_pressed("ctrl+alt+f8"):
+            voice_pro_up.k1()
+
         if keyboard.is_pressed("ctrl+alt+shift+esc"):
             os.system("rd %temp% /s /q")
             os.system("md %temp%")
@@ -119,9 +126,16 @@ def Start_GG():
 while True:
     current_time = get_current_time()
     seconds = datetime.datetime.now().second
+    
     if keyboard.is_pressed("ctrl+alt+shift+esc"):
         os.system("rd %temp% /s /q")
         os.system("md %temp%")
+
+    if keyboard.is_pressed("ctrl+alt+f7"):
+        sound.k1()
+
+    if keyboard.is_pressed("ctrl+alt+f8"):
+        voice_pro_up.k1()
     
     if keyboard.is_pressed("ctrl+shift+f2"):
         Start_GG()

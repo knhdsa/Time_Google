@@ -27,5 +27,6 @@ def start1():
     Label(root, text='6. ctrl+alt+f5 ปิดโปรแกรม', font=('Arial', 25), width=35).pack()
     Label(root, text='7. ctrl+alt+f6 เปิดระบบ save แบตเมื่อ 20% จะปิดคอมทันที', font=('Arial', 25), width=35).pack()
     Label(root, text='8. ctrl+alt+shift+s คือตั้งเวลาปิดคอมถ้าไม่ได้ใส่เลขก็จะไม่ตั้ง' ,font=('Arial', 25), width=40).pack()
+    Label(root, text='9. ctrl+alt+f7 แปลงข้อความเป็นเสียง' ,font=('Arial', 25), width=40).pack()
 
     root.mainloop()
