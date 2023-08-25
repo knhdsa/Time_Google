@@ -148,13 +148,11 @@ while True:
     if keyboard.is_pressed("ctrl+alt+h"):
         help.start1()
 
-
     if keyboard.is_pressed("ctrl+alt+f5"):
         quit()
 
     if keyboard.is_pressed("ctrl+alt+shift+s"):
         Shutdown.windows1()
-
 
     if keyboard.is_pressed("ctrl+alt+f6"):
         start1("Save20.exe")
