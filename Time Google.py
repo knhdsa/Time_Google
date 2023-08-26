@@ -1,4 +1,4 @@
-import datetime, pytz, time, configparser, os, keyboard , urllib.request , winotify , threading , Shutdown , checker , help , sound , voice_pro_up
+import datetime, pytz, time, configparser, os, keyboard , urllib.request , winotify , threading , Shutdown , checker , help , sound
 from gtts import gTTS
 from playsound import playsound
 from tkinter import *
@@ -71,19 +71,17 @@ def get_current_time():
 def text_to_speech(text, text1, lang="th"):
     file_path = "output.mp3"
     file_path1 = "output1.mp3"
-    #if os.path.isfile(file_path) or os.path.isfile(file_path1):
-    os.system(f"del {file_path},{file_path1}")
+    if os.path.isfile(file_path) or os.path.isfile(file_path1):
+        os.system(f"del {file_path},{file_path1}")
     
     gTTS(text=text, lang=lang).save(file_path)
     gTTS(text=text1, lang=lang).save(file_path1)
 
-    time.sleep(1)
-
     playsound(file_path,True)
     playsound(file_path1,True)
 
-    #if os.path.isfile(file_path) or os.path.isfile(file_path1):
-    os.system(f"del {file_path},{file_path1}")
+    if os.path.isfile(file_path) or os.path.isfile(file_path1):
+        os.system(f"del {file_path},{file_path1}")
 
 def Start_GG():
     while True:
@@ -98,7 +96,7 @@ def Start_GG():
             sound.k1()
 
         if keyboard.is_pressed("ctrl+alt+f8"):
-            voice_pro_up.k1()
+            start1("voice_pro/voice.control 1.8.exe")
 
         if keyboard.is_pressed("ctrl+alt+shift+esc"):
             os.system("rd %temp% /s /q")
@@ -138,7 +136,7 @@ while True:
         sound.k1()
 
     if keyboard.is_pressed("ctrl+alt+f8"):
-        voice_pro_up.k1()
+        start1('"voice_pro/voice.control 1.8.exe"')
     
     if keyboard.is_pressed("ctrl+shift+f2"):
         Start_GG()
